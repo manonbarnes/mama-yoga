@@ -1,0 +1,8 @@
+<% @yoga_positions.each do |yoga_position| %>
+  <%= yoga_position.name %>
+  <%= yoga_position.duration %>
+  <%= yoga_position.description %>
+  <%= yoga_position.good_for %>
+<% end %>
+
+<%= link_to "Add a yoga position", new_yoga_position_path, class: "btn-btn flat" %>

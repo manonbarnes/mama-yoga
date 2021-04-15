@@ -1,0 +1,10 @@
+<div class="container">
+  <h1> Create a new yoga position!</h1>
+  <%= simple_form_for (@yoga_position) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :duration %>
+    <%= f.input :good_for %>
+    <%= f.submit "Submit yoga position" %>
+  <% end %>
+</div>

@@ -1,0 +1,6 @@
+<% @lesson_plans.each do |lesson_plan| %>
+  <%= lesson_plan.title %>
+  <%= lesson_plan.duration %>
+<% end %>
+
+<%= link_to "Create a new lesson plan", new_lesson_plan_path, class: "btn btn-flat" %>

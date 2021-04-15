@@ -1,0 +1,9 @@
+<div class="container">
+  <h1> Create a new lesson plan!</h1>
+  <%= simple_form_for (@lesson_plan) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+     <%= f.input :duration %>
+    <%= f.submit "Submit lesson plan" %>
+  <% end %>
+</div>

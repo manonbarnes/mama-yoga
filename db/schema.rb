@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_15_154421) do
+ActiveRecord::Schema.define(version: 2021_04_15_171001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "lesson_plans", force: :cascade do |t|
+    t.time "duration"
+    t.text "description"
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "lesson_postions", force: :cascade do |t|
+    t.bigint "yoga_position_id", null: false
+    t.bigint "lesson_plan_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lesson_plan_id"], name: "index_lesson_postions_on_lesson_plan_id"
+    t.index ["yoga_position_id"], name: "index_lesson_postions_on_yoga_position_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +44,15 @@ ActiveRecord::Schema.define(version: 2021_04_15_154421) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "yoga_positions", force: :cascade do |t|
+    t.string "name"
+    t.integer "duration"
+    t.text "description"
+    t.text "good_for"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "lesson_postions", "lesson_plans"
+  add_foreign_key "lesson_postions", "yoga_positions"
 end

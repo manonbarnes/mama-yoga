@@ -33,7 +33,7 @@ class YogaPositionsController < ApplicationController
 private
 
   def yoga_position_params
-    params.require(:yoga_position).permit(:name, :description, :duration, :good_for)
+    params.require(:yoga_position).permit(:name, :description, :duration, :good_for, :photo)
   end
 end
 

@@ -3,5 +3,8 @@
   <%= lesson_plan.yoga_position.name %>
   <%= lesson_plan.yoga_position.duration %>
   <%= lesson_plan.yoga_position.description %>
+  <% if lesson_plan.yoga_position.photo.attached? %>
+    <%= cl_image_tag lesson_plan.yoga_position.photo.key, height: 200, width: 200%>
+  <% end %>
 <% end %>
 <%= link_to "Add a yoga position",  new_lesson_plan_lesson_position_path(@lesson_plan), class: "btn btn-flat" %>

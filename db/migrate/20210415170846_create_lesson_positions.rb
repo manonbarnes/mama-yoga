@@ -1,6 +1,6 @@
-class CreateLessonPostions < ActiveRecord::Migration[6.1]
+class CreateLessonPositions < ActiveRecord::Migration[6.1]
   def change
-    create_table :lesson_postions do |t|
+    create_table :lesson_positions do |t|
       t.references :yoga_position, null: false, foreign_key: true
       t.references :lesson_plan, null: false, foreign_key: true
 

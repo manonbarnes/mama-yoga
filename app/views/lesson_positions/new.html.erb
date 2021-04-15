@@ -1,0 +1,7 @@
+<div class="container">
+  <h1> Add a new yoga position to your yoga lesson!</h1>
+  <%= simple_form_for [@lesson_plan, @lesson_position] do |f| %>
+    <%= f.association :yoga_position%>
+    <%= f.submit "Add!", class: "btn btn-flat" %>
+  <% end %>
+</div>

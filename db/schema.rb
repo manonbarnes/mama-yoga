@@ -23,13 +23,13 @@ ActiveRecord::Schema.define(version: 2021_04_15_171001) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "lesson_postions", force: :cascade do |t|
+  create_table "lesson_positions", force: :cascade do |t|
     t.bigint "yoga_position_id", null: false
     t.bigint "lesson_plan_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["lesson_plan_id"], name: "index_lesson_postions_on_lesson_plan_id"
-    t.index ["yoga_position_id"], name: "index_lesson_postions_on_yoga_position_id"
+    t.index ["lesson_plan_id"], name: "index_lesson_positions_on_lesson_plan_id"
+    t.index ["yoga_position_id"], name: "index_lesson_positions_on_yoga_position_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,6 +53,6 @@ ActiveRecord::Schema.define(version: 2021_04_15_171001) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "lesson_postions", "lesson_plans"
-  add_foreign_key "lesson_postions", "yoga_positions"
+  add_foreign_key "lesson_positions", "lesson_plans"
+  add_foreign_key "lesson_positions", "yoga_positions"
 end

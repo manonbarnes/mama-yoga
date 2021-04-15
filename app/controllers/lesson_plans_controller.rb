@@ -5,6 +5,7 @@ class LessonPlansController < ApplicationController
 
   def show
     @lesson_plan = LessonPlan.find(params[:id])
+    @lesson_plan.lesson_positions
   end
 
   def new

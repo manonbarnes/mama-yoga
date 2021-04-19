@@ -1,6 +1,18 @@
+<div class="top-left-button mt-5 ml-2">
+  <%= link_to "Create a new lesson plan", new_lesson_plan_path, class: "btn btn-flat" %>
+</div>
+<div class="all-lesson-plans">
+<div class="all-cards">
 <% @lesson_plans.each do |lesson_plan| %>
-  <%= lesson_plan.title %>
-  <%= lesson_plan.duration %>
+  <div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= lesson_plan.title %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= lesson_plan.duration %></h6>
+    <p class="card-text"><%= lesson_plan.description%></p>
+    <%=  link_to "See lesson", lesson_plan_path(lesson_plan), class:"card-link"%>
+    <%=  link_to "Edit lesson", edit_lesson_plan_path(lesson_plan), class:"card-link"%>
+  </div>
+</div>
 <% end %>
-
-<%= link_to "Create a new lesson plan", new_lesson_plan_path, class: "btn btn-flat" %>
+</div>
+</div>

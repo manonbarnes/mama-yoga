@@ -1,4 +1,5 @@
-<div class="top-left-button mt-5 ml-2">
+
+<div class="top-left-button mt-5 ml-2 mb-5">
   <%= link_to "Create a new lesson plan", new_lesson_plan_path, class: "btn btn-flat" %>
 </div>
 <div class="all-lesson-plans">
@@ -6,9 +7,9 @@
 <% @lesson_plans.each do |lesson_plan| %>
   <div class="card" style="width: 20rem;">
   <div class="card-body">
-    <h5 class="card-title"><%= lesson_plan.title %></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><%= lesson_plan.duration %></h6>
-    <p class="card-text"><%= lesson_plan.description%></p>
+    <h5 class="card-title"><%= lesson_plan.title.capitalize %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= lesson_plan.duration %> minutes</h6>
+    <p class="card-text"><%= lesson_plan.description.capitalize %></p>
     <%=  link_to "See lesson", lesson_plan_path(lesson_plan), class:"card-link"%>
     <%=  link_to "Edit lesson", edit_lesson_plan_path(lesson_plan), class:"card-link"%>
   </div>
@@ -16,3 +17,4 @@
 <% end %>
 </div>
 </div>
+

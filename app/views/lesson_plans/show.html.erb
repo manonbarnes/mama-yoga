@@ -1,4 +1,6 @@
 <%= @lesson_plan.title %>
+<%= @lesson_plan.description %>
+<%= @lesson_plan.duration %>
 <% @lesson_plan.lesson_positions.each do |lesson_plan| %>
   <%= lesson_plan.yoga_position.name %>
   <%= lesson_plan.yoga_position.duration %>

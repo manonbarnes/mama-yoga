@@ -1,11 +1,12 @@
-<div class="container">
+<div class="container mt-4">
   <h1> Create a new yoga position!</h1>
   <%= simple_form_for (@yoga_position) do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.input :duration %>
+    <%= f.input :duration, label:"Duration in seconds" %>
     <%= f.input :good_for %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit "Submit yoga position" %>
+    <%= f.input :photo, as: :file, class:"btn btn-flat" %>
+    <br>
+    <%= f.submit "Submit yoga position", class:"btn btn-flat" %>
   <% end %>
 </div>

@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_04_15_233059) do
   end
 
   create_table "lesson_plans", force: :cascade do |t|
-    t.time "duration"
+    t.integer "duration"
     t.text "description"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false

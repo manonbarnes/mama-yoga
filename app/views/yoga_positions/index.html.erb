@@ -1,8 +1,16 @@
-<% @yoga_positions.each do |yoga_position| %>
-  <%= yoga_position.name %>
-  <%= yoga_position.duration %>
-  <%= yoga_position.description %>
-  <%= yoga_position.good_for %>
-<% end %>
-
+<div class="container">
 <%= link_to "Add a yoga position", new_yoga_position_path, class: "btn-btn flat" %>
+<div class="cards-with-image">
+  <% @yoga_positions.each do |yoga_position| %>
+  <div class="card" style="width: 22.25rem;">
+    <%= cl_image_tag yoga_position.photo.key %>
+    <div class="card-body">
+      <h5 class="card-title"><%= yoga_position.name.capitalize %></h5>
+      <p class="card-text"><%= yoga_position.description %></p>
+      <p class="card-text"><small class="text-muted"><%= yoga_position.good_for %></small></p>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>
+

@@ -1,18 +1,18 @@
   <div class="top-left-button mt-5 ml-2 mb-5">
 <%= link_to "Add a yoga position", new_yoga_position_path, class: "btn btn-flat" %>
 </div>
-<div class="container">
-<div class="cards-with-image">
-  <% @yoga_positions.each do |yoga_position| %>
-  <div class="card" style="width: 22.25rem;">
-    <%= cl_image_tag yoga_position.photo.key %>
-    <div class="card-body">
-      <h5 class="card-title"><%= yoga_position.name.capitalize %></h5>
-      <p class="card-text"><%= yoga_position.description %></p>
-      <p class="card-text"><small class="text-muted"><%= yoga_position.good_for %></small></p>
+<section class="hero-section">
+  <div class="card-grid">
+     <% @yoga_positions.each do |yoga_position| %>
+
+    <div class="card-all" >
+      <div><%= link_to yoga_position_path(yoga_position) do %><%= cl_image_tag yoga_position.photo.key, class:"card__background", width:250, height:250 %></div><% end %>
+      <div class="card__content">
+        <p class="card__category"><%= link_to yoga_position_path(yoga_position) do %><%= yoga_position.name.capitalize %></p><% end %>
+        <h3 class="card__heading"><%= link_to yoga_position_path(yoga_position) do %><%= yoga_position.description.capitalize %></h3><% end %>
+      </div>
     </div>
-  </div>
-  <% end %>
-</div>
-</div>
+    <% end %>
+  <div>
+</section>
 

@@ -1,5 +1,7 @@
+  <div class="top-left-button mt-5 ml-2 mb-5">
+<%= link_to "Add a yoga position", new_yoga_position_path, class: "btn btn-flat" %>
+</div>
 <div class="container">
-<%= link_to "Add a yoga position", new_yoga_position_path, class: "btn-btn flat" %>
 <div class="cards-with-image">
   <% @yoga_positions.each do |yoga_position| %>
   <div class="card" style="width: 22.25rem;">

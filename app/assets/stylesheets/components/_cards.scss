@@ -21,3 +21,8 @@
   grid-template-columns: 1fr 1fr 1fr ;
   grid-gap:20px;
 }
+
+.card:hover{
+    top: -2px;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+}

@@ -27,7 +27,7 @@ aria-hidden="true" data-backdrop="false">
         <br>
         <% end %>
       </div>
-      <p class="modal-footer mt-3"><em>Can't find what you're looking for? Create a new position here:</em></p><%= link_to new_yoga_position_path, "New Yoga Position" %>
+      <p class="modal-footer mt-3"><em>Can't find what you're looking for? Create a new position here, and then come back to add it:</em></p><%= link_to "New Yoga Position", new_yoga_position_path, class:"btn btn-flat" %>
     </div>
   </div>
 </div>
@@ -59,7 +59,7 @@ aria-hidden="true" data-backdrop="false">
         <% end %>
       </div>
         </div>
-        <p class="card__heading"><%= link_to yoga_position_path(lesson_plan.yoga_position) do %><%= lesson_plan.yoga_position.description %></p><% end %>
+        <p class="card__heading"><%= link_to yoga_position_path(lesson_plan.yoga_position) do %><%= lesson_plan.yoga_position.name %></p><% end %>
       </div>
     </div>
     <% end %>

@@ -19,6 +19,10 @@ class LessonPositionsController < ApplicationController
     end
   end
 
+  def destroy
+    @lesson_plan = LessonPlan.find(params[:lesson_plan_id])
+    @lesson_position = LessonPosition.find
+  end
   private
 
   def lesson_position_params

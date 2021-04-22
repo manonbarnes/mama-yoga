@@ -20,8 +20,8 @@ class LessonPositionsController < ApplicationController
   end
 
   def destroy
-    @lesson_plan = LessonPlan.find(params[:lesson_plan_id])
-    @lesson_position = LessonPosition.find(params[:id])
+    @lesson_plan = LessonPlan.find(params[:id])
+    @lesson_position = LessonPosition.find(params[:lesson_plan_id])
     @lesson_position.destroy
     redirect_to lesson_plan_path(@lesson_plan)
   end

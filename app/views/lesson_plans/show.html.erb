@@ -1,10 +1,14 @@
-<div class="text-center">
-  <h1 class="mt-3"><%= @lesson_plan.title %></h1>
-  <h4><%= @lesson_plan.description %></h4>
-  <h4><%= @lesson_plan.duration %></h4>
-  YOGA POSITIONS
+<div class="text-center lesson-plan-top">
+  <div>
+    <h1 class="mt-3 title-center"><%= @lesson_plan.title %></h1>
+  </div>
+  <div>
+    <h5 class="mt-3 duration-right-corner"><%= @lesson_plan.duration %> minutes<i class="fas fa-hourglass-end ml-2"></i></h5>
+  </div>
+  <em><h4><%= @lesson_plan.description %></h4></em>
 </div>
-
+<br>
+<h4 class="text-center">yoga position</h4>
   <section class="hero-section">
     <div class="card-grid">
       <% @lesson_plan.lesson_positions.each do |lesson_plan| %>

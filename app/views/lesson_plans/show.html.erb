@@ -1,12 +1,18 @@
+<div class="container">
 <h1><%= @lesson_plan.title %></h1>
 <h4><%= @lesson_plan.description %></h4>
 <h4><%= @lesson_plan.duration %></h4>
+<section class="hero-section">
+  <div class="card-grid">
 <% @lesson_plan.lesson_positions.each do |lesson_plan| %>
-  <%= lesson_plan.yoga_position.name %>
-  <%= lesson_plan.yoga_position.duration %>
-  <%= lesson_plan.yoga_position.description %>
-  <% if lesson_plan.yoga_position.photo.attached? %>
-    <%= cl_image_tag lesson_plan.yoga_position.photo.key, height: 200, width: 200%>
-  <% end %>
+ <div class="card-all" >
+<div><%= link_to yoga_position_path(lesson_plan.yoga_position) do %><%= cl_image_tag lesson_plan.yoga_position.photo.key, class:"card__background", width:250, height:250 %></div><% end %>
+  <div class="card__content">
+    <p class="card__category"><%= link_to yoga_position_path(lesson_plan.yoga_position) do %><%= lesson_plan.yoga_position.duration %></p><% end %>
+        <h3 class="card__heading"><%= link_to yoga_position_path(lesson_plan.yoga_position) do %><%= lesson_plan.yoga_position.description %></h3><% end %>
+</div>
 <% end %>
+</div>
+</section>
 <%= link_to "Add a yoga position",  new_lesson_plan_lesson_position_path(@lesson_plan), class: "btn btn-flat" %>
+</div>

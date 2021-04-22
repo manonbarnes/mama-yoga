@@ -48,8 +48,6 @@
 
 html{
   height: 100%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
 }
 
 body{
@@ -131,14 +129,14 @@ body{
 
 .card__category a{
   color: var(--text-light);
-  font-size: 0.9rem;
+  font-size: 1.3rem;
   margin-bottom: var(--spacing-s);
   text-transform: uppercase;
 }
 
 .card__heading a{
   color: var(--text-lighter);
-  font-size: 1.9rem;
+  font-size: 2.5rem;
   text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
   line-height: 1.4;
   word-spacing: 100vw;
@@ -147,5 +145,6 @@ body{
 .card-all a{
   text-decoration:none;
 }
+
 
 

@@ -14,7 +14,7 @@
       <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1569940532213-33adf38784c9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80)"></div><% end %>
       <div class="card__content">
         <p class="card__category"><%= link_to lesson_plan_path(lesson_plan) do %><%= lesson_plan.duration %> minutes</p><% end %>
-        <h3 class="card__heading"><%= link_to lesson_plan_path(lesson_plan) do %><%= lesson_plan.title.capitalize %></h3><% end %>
+        <p class="card__heading"><%= link_to lesson_plan_path(lesson_plan) do %><%= lesson_plan.title.capitalize %></p><% end %>
       </div>
     </div>
     <% end %>

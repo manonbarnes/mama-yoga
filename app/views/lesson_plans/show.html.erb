@@ -27,6 +27,7 @@ aria-hidden="true" data-backdrop="false">
         <br>
         <% end %>
       </div>
+      <p class="modal-footer mt-3"><em>Can't find what you're looking for? Create a new position here:</em></p><%= link_to new_yoga_position_path, "New Yoga Position" %>
     </div>
   </div>
 </div>
@@ -51,9 +52,14 @@ aria-hidden="true" data-backdrop="false">
     <div class="card-all" >
       <div><%= link_to yoga_position_path(lesson_plan.yoga_position) do %><%= cl_image_tag lesson_plan.yoga_position.photo.key, class:"card__background", width:282, height:250 %></div><% end %>
       <div class="card__content">
-        <%= link_to "Delete", lesson_plan_lesson_position_path(lesson_plan), method: :delete, data: { confirm: "Delete position from lesson?" }, class: "btn btn-flat" %>
+        <div class="d-flex justify-content-between" style="width:220px;">
         <p class="card__category"><%= link_to yoga_position_path(lesson_plan.yoga_position) do %><%= lesson_plan.yoga_position.duration %> seconds</p><% end %>
-        <h3 class="card__heading"><%= link_to yoga_position_path(lesson_plan.yoga_position) do %><%= lesson_plan.yoga_position.description %></h3><% end %>
+        <div><%= link_to lesson_plan_lesson_position_path(lesson_plan), method: :delete, data: { confirm: "Delete position from lesson?" } do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+      </div>
+        </div>
+        <p class="card__heading"><%= link_to yoga_position_path(lesson_plan.yoga_position) do %><%= lesson_plan.yoga_position.description %></p><% end %>
       </div>
     </div>
     <% end %>

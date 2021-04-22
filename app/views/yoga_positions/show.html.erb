@@ -3,7 +3,7 @@
 </div>
 <div class="layout-yoga-show">
   <div>
-    <%= cl_image_tag @yoga_position.photo.key, width:600, height: 500 %>
+    <%= cl_image_tag @yoga_position.photo.key, width:600, height: 500, class: "img-rounded" %>
   </div>
   <div class="yoga-position-info">
     <h1><%= @yoga_position.name %> - <%= @yoga_position.duration %> seconds<i class="fas fa-hourglass-end ml-2"></i></h1>

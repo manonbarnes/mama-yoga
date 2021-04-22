@@ -51,6 +51,7 @@ aria-hidden="true" data-backdrop="false">
     <div class="card-all" >
       <div><%= link_to yoga_position_path(lesson_plan.yoga_position) do %><%= cl_image_tag lesson_plan.yoga_position.photo.key, class:"card__background", width:282, height:250 %></div><% end %>
       <div class="card__content">
+        <%= link_to "Delete", lesson_plan_lesson_position_path(lesson_plan.yoga_position), method: :delete, data: { confirm: "Delete position from lesson?" }, class: "btn btn-flat" %>
         <p class="card__category"><%= link_to yoga_position_path(lesson_plan.yoga_position) do %><%= lesson_plan.yoga_position.duration %> seconds</p><% end %>
         <h3 class="card__heading"><%= link_to yoga_position_path(lesson_plan.yoga_position) do %><%= lesson_plan.yoga_position.description %></h3><% end %>
       </div>

@@ -1,5 +1,16 @@
-<%= @yoga_position.name %>
-<%= @yoga_position.duration %>
-<%= @yoga_position.description %>
-<%= @yoga_position.good_for %>
-<%= cl_image_tag @yoga_position.photo.key %>
+<div class="top-left-button mt-5 ml-5 mb-5 mr-5">
+  <%= link_to 'Back', :back, class: "btn btn-flat" %>
+</div>
+<div class="layout-yoga-show">
+  <div>
+    <%= cl_image_tag @yoga_position.photo.key, width:600, height: 500 %>
+  </div>
+  <div class="yoga-position-info">
+    <h1><%= @yoga_position.name %> - <%= @yoga_position.duration %> seconds<i class="fas fa-hourglass-end ml-2"></i></h1>
+    <br>
+    <h4><%= @yoga_position.description %></h4>
+    <br>
+    <h4>Good for: <em><%= @yoga_position.good_for %></em></h4>
+  </div>
+</div>
+

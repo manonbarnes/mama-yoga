@@ -9,8 +9,8 @@
     <div class="card-all" >
       <div><%= link_to yoga_position_path(yoga_position) do %><%= cl_image_tag yoga_position.photo.key, class:"card__background", width:282, height:250 %></div><% end %>
       <div class="card__content">
-        <p class="card__category"><%= link_to yoga_position_path(yoga_position) do %><%= yoga_position.name.capitalize %></p><% end %>
-        <p class="card__heading"><%= link_to yoga_position_path(yoga_position) do %><%= yoga_position.description.capitalize %></p><% end %>
+        <p class="card__category"><%= link_to yoga_position_path(yoga_position) do %><%= yoga_position.duration %> seconds</p><% end %>
+        <p class="card__heading"><%= link_to yoga_position_path(yoga_position) do %><%= yoga_position.name %></p><% end %>
       </div>
     </div>
     <% end %>

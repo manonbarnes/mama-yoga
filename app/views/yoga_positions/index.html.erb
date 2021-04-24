@@ -1,11 +1,10 @@
-  <div class="top-left-button mt-5 ml-2 mb-5">
-<%= link_to "Add a yoga position", new_yoga_position_path, class: "btn btn-flat" %>
+<div class="top-left-button mt-5 ml-2 mb-5">
+  <%= link_to "Add a yoga position", new_yoga_position_path, class: "btn btn-flat" %>
 </div>
 
 <section class="hero-section">
   <div class="card-grid">
-     <% @yoga_positions.each do |yoga_position| %>
-
+    <% @yoga_positions.each do |yoga_position| %>
     <div class="card-all" >
       <div><%= link_to yoga_position_path(yoga_position) do %><%= cl_image_tag yoga_position.photo.key, class:"card__background", width:282, height:250 %></div><% end %>
       <div class="card__content">
@@ -14,6 +13,6 @@
       </div>
     </div>
     <% end %>
-  <div>
-</section>
+    </div>
+    </section>
 

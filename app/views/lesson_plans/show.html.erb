@@ -1,47 +1,46 @@
-
 <div class="text-center lesson-plan-top">
   <div class="d-flex title-beg">
     <div>
       <button type="button" id="createBtn" class="btn btn-flat" data-toggle="modal" data-target="#modalPoll-1">Add a yoga position</button>
-<%# bouton pour trigger la modal %>
-<div class="modal fade right" id="modalPoll-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-aria-hidden="true" data-backdrop="false">
-<div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
-  <div class="modal-content">
-    <div class="modal-header">
-      <p class="heading lead">Yoga Position</p>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true" class="white-text">×</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <div class="text-center">
-        <i class="fas fa-om fa-4x mb-3 animated rotateIn"></i>
-        <p>
-          <strong>Add a yoga position to your lesson</strong>
-        </p>
+      <%# bouton pour trigger la modal %>
+      <div class="modal fade right" id="modalPoll-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <p class="heading lead">Yoga Position</p>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" class="white-text">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="text-center">
+              <i class="fas fa-om fa-4x mb-3 animated rotateIn"></i>
+              <p>
+                <strong>Add a yoga position to your lesson</strong>
+              </p>
 
-        <%# formulaire pour créer un nouveau topic %>
-        <%= simple_form_for [@lesson_plan, @lesson_position] do |f| %>
-        <%= f.association :yoga_position, label:"Pick which!"%>
-        <%= f.submit "Add!", class:"btn btn-flat" %>
-        <br>
-        <% end %>
+              <%# formulaire pour ajouter position %>
+              <%= simple_form_for [@lesson_plan, @lesson_position] do |f| %>
+              <%= f.association :yoga_position, label:"Pick which!"%>
+              <%= f.submit "Add!", class:"btn btn-flat" %>
+              <br>
+              <% end %>
+            </div>
+            <p class="modal-footer mt-3"><em>Can't find what you're looking for? Create a new position here, and then come back to add it:</em></p><%= link_to "New Yoga Position", new_yoga_position_path, class:"btn btn-flat" %>
+          </div>
+        </div>
       </div>
-      <p class="modal-footer mt-3"><em>Can't find what you're looking for? Create a new position here, and then come back to add it:</em></p><%= link_to "New Yoga Position", new_yoga_position_path, class:"btn btn-flat" %>
     </div>
   </div>
-</div>
-</div>
-    </div>
-    <div>
-      <h1><%= @lesson_plan.title %></h1>
-    </div>
-    <div>
-      <h5><%= @lesson_plan.duration %> minutes<i class="fas fa-hourglass-end ml-2"></i></h5>
-    </div>
+  <div>
+    <h1><%= @lesson_plan.title %></h1>
   </div>
-  <em><h6 class="mt-3"><%= @lesson_plan.description %></h6></em>
+  <div>
+    <h5><%= @lesson_plan.duration %> minutes<i class="fas fa-hourglass-end ml-2"></i></h5>
+  </div>
+</div>
+<em><h6 class="mt-3"><%= @lesson_plan.description %></h6></em>
 </div>
 
 
@@ -54,11 +53,11 @@ aria-hidden="true" data-backdrop="false">
       <div><%= link_to yoga_position_path(lesson_plan.yoga_position) do %><%= cl_image_tag lesson_plan.yoga_position.photo.key, class:"card__background", width:282, height:250 %></div><% end %>
       <div class="card__content">
         <div class="d-flex justify-content-between" style="width:220px;">
-        <p class="card__category"><%= link_to yoga_position_path(lesson_plan.yoga_position) do %><%= lesson_plan.yoga_position.duration %> seconds</p><% end %>
-        <div><%= link_to lesson_plan_lesson_position_path(lesson_plan), method: :delete, data: { confirm: "Delete position from lesson?" } do %>
-          <i class="far fa-trash-alt"></i>
-        <% end %>
-      </div>
+          <p class="card__category"><%= link_to yoga_position_path(lesson_plan.yoga_position) do %><%= lesson_plan.yoga_position.duration %> seconds</p><% end %>
+          <div><%= link_to lesson_plan_lesson_position_path(lesson_plan), method: :delete, data: { confirm: "Delete position from lesson?" } do %>
+            <i class="far fa-trash-alt"></i>
+            <% end %>
+          </div>
         </div>
         <p class="card__heading"><%= link_to yoga_position_path(lesson_plan.yoga_position) do %><%= lesson_plan.yoga_position.name %></p><% end %>
       </div>

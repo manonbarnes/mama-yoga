@@ -1,4 +1,10 @@
-<div class="container">
-  <%= link_to "See all lesson plans", lesson_plans_path, class: "btn btn-flat" %>
-  <%= link_to "See all yoga positions", yoga_positions_path, class: "btn btn-flat" %>
+
+  <div class = "home-image" style="background-image: url(https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1694&q=80)">
+    <% if user_signed_in? %>
+      <h1> Welcolme <%= current_user.first_name.capitalize  %> <%= current_user.last_name.capitalize  %></h1>
+      <%= link_to "See all lesson plans", lesson_plans_path, class: "btn btn-flat" %>
+      <%= link_to "See all yoga positions", yoga_positions_path, class: "btn btn-flat" %>
+    <% else %>
+      <h1>Log in to access your lesson plans and positions</h1>
+    <% end %>
 </div>

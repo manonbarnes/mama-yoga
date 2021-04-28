@@ -1,10 +1,14 @@
 
   <div class = "home-image" style="background-image: url(https://images.unsplash.com/photo-1561049501-e1f96bdd98fd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=652&q=80)">
+    <div class="home-choice">
     <% if user_signed_in? %>
-      <h1> Welcolme <%= current_user.first_name.capitalize  %> <%= current_user.last_name.capitalize  %></h1>
-      <%= link_to "See all lesson plans", lesson_plans_path, class: "btn btn-flat" %>
+      <h1> Welcolme to Mama-Yoga</h1>
+      <br>
+      <%= link_to "See all lesson plans", lesson_plans_path, class: "btn btn-flat", id:"space-between-buttons" %>
       <%= link_to "See all yoga positions", yoga_positions_path, class: "btn btn-flat" %>
     <% else %>
       <h1>Log in to access your lesson plans and positions</h1>
+      <%= link_to "Login", user_log_in_path, class: "btn btn-flat" %>
     <% end %>
+    </div>
 </div>

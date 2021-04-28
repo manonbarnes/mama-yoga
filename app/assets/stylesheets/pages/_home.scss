@@ -4,4 +4,16 @@
   height: 100%;
   background-position: center;
   background-fit: cover;
+  position:relative;
+}
+
+.home-choice{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#space-between-buttons{
+  margin-right: 30px;
 }

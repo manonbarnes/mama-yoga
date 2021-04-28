@@ -1,5 +1,5 @@
 
-  <div class = "home-image" style="background-image: url(https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1694&q=80)">
+  <div class = "home-image" style="background-image: url(https://images.unsplash.com/photo-1561049501-e1f96bdd98fd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=652&q=80)">
     <% if user_signed_in? %>
       <h1> Welcolme <%= current_user.first_name.capitalize  %> <%= current_user.last_name.capitalize  %></h1>
       <%= link_to "See all lesson plans", lesson_plans_path, class: "btn btn-flat" %>

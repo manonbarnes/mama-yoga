@@ -7,8 +7,8 @@
       <%= link_to "See all lesson plans", lesson_plans_path, class: "btn btn-flat", id:"space-between-buttons" %>
       <%= link_to "See all yoga positions", yoga_positions_path, class: "btn btn-flat" %>
     <% else %>
-      <h1>Log in to access your lesson plans and positions</h1>
-      <%= link_to "Login", user_log_in_path, class: "btn btn-flat" %>
+      <h1 class="text-center log-in-message">Log in to access your lesson plans and positions</h1>
+      <%= link_to "Login", user_session_path, class: "btn btn-flat", id:"button-centered"%>
     <% end %>
     </div>
 </div>

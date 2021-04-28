@@ -17,3 +17,14 @@
 #space-between-buttons{
   margin-right: 30px;
 }
+
+#button-centered{
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.log-in-message{
+  position:relative;
+}
